@@ -14,6 +14,13 @@ O que estou pegando???
 - documentários;
 */
 
+
+const basicFetch = async (endPoint) => {
+  const request = await fetch(`${API_BASE}${endPoint}`);
+  const json = await request.json();
+  return json;
+}
+
 export default {
   getHomeList: async () => {
     return [

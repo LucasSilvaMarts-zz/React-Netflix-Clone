@@ -1,13 +1,30 @@
-import React, { Component } from 'react';
+/* eslint-disable import/no-anonymous-default-export */
+import React, { useEffect, useState } from 'react';
+import Tmdb from './services/APITmdb';
 
-class App extends Component {
-  render() {
-    return(
-      <div>
-       Hey React
-      </div>
-    );
-  }
+export default () => {
+
+  const [movieList, setMovieList] = useState([]);
+
+  useEffect(() => {
+    const loadAll = async () => {
+      // Pegando a lista toda
+      let list = await Tmdb.getHomeList();
+      setMovieList(list);
+    }
+
+    loadAll();
+  }, []);
+
+  return (
+    <div className="page">
+      <sction className="lists">
+        {movieList.map((item, key) => (
+          <div>
+            {item.title}
+          </div>
+        ))}
+      </sction>
+    </div>
+  );
 }
-
-export default App;

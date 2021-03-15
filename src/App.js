@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, { useEffect, useState } from 'react';
+import MovieRow from './components/MovieRow';
 import Tmdb from './services/APITmdb';
 
 export default () => {
@@ -21,7 +22,7 @@ export default () => {
       <sction className="lists">
         {movieList.map((item, key) => (
           <div>
-            {item.title}
+            <MovieRow key={key} title={item.title} items={item.items} />
           </div>
         ))}
       </sction>

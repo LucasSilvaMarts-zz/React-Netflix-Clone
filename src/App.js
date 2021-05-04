@@ -20,7 +20,7 @@ export default () => {
 
       // Pegando o featured
       let originals = list.filter(film => film.slug === 'originals');
-      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length -1));
+      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1));
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
       setFeaturedData(chosenInfo);
@@ -31,7 +31,7 @@ export default () => {
 
   useEffect(() => {
     const scrollListener = () => {
-      if(window.scrollY > 10) {
+      if (window.scrollY > 10) {
         setBlackHeader(true);
       } else {
         setBlackHeader(false);
@@ -48,19 +48,25 @@ export default () => {
   return (
     <div className="page">
 
-      <Header black={ blackHeader } />
+      <Header black={blackHeader} />
 
       {featuredData &&
-        <FeaturedMovie item={ featuredData } />
+        <FeaturedMovie item={featuredData} />
       }
 
       <section className="lists">
         {movieList.map((item, key) => (
           <div>
-            <MovieRow key={ key } title={ item.title } items={ item.items } />
+            <MovieRow key={key} title={item.title} items={item.items} />
           </div>
         ))}
       </section>
+
+      <footer>
+        Feito com <span role="img" aria-label="coração">❤</span> por DevMarts
+        Direitos de imagem para Netflix<br />
+        Dados pegos do site Themoviedb
+      </footer>
     </div>
   );
 }

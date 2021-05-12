@@ -16,4 +16,3 @@ Esse é um projeto desenvolvido em React com o objetivo de praticar o uso da liv
 3° Instale as dependências - npm install;
 
 4° Inicie o projeto - npm start;
-I

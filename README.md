@@ -6,6 +6,7 @@ Esse é um projeto desenvolvido em React com o objetivo de praticar o uso da liv
 
 ## Quer testar o app?
 
+https://tender-babbage-71cfc3.netlify.app
 
 ## Se quiser baixar o app
 
